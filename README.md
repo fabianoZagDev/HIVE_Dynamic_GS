@@ -12,20 +12,35 @@ Este repositório contém a implementação de uma aplicação em Python que int
 
 A estrutura de pastas do projeto é a seguinte:
 hive_app/
+
 ├── api_client/
+
 │ ├── areas_api.py # Requisição para API de áreas danificadas (Simulada)
+
 ├── database/
+
 │ ├── models.py # Definição de modelos (Area, Base)
+
 │ └── repository.py # Funções de acesso ao "banco" (simulado)
+
 ├── business/
+
 │ ├── area_service.py # Lógica de negócio para áreas
+
 │ └── base_service.py # Lógica de negócio para bases
+
 ├── notifications/
+
 │ └── alert_service.py # Envio de alertas sobre áreas danificadas
+
 ├── interface/
+
 │ └── cli.py # Interação com o usuário via linha de comando
+
 ├── utils/
+
 │ └── geo_utils.py # Funções utilitárias para cálculos geográficos
+
 ├── main.py # Ponto de entrada para rodar o 
 
 ---
