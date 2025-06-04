@@ -113,11 +113,8 @@ Estamos utilizando **busca binária** para encontrar a **base mais próxima** de
 
 #### **Dicionários**
 
-<<<<<<< HEAD
-Utilizamos **dicionários** para simular o banco de dados e o retorno da API e também usamos para armazenar as áreas e bases, permitindo buscas rápidas com base no ID, o que torna o código eficiente.
-=======
+
 Utilizamos **dicionários** para simular o banco de dados e a API e também usamos para armazenar as áreas e bases, permitindo buscas rápidas com base no ID, o que torna o código eficiente.
->>>>>>> 5f6fa8efd95e7b30ec192592d9fe964dc545d3a7
 
 - **Link para o código:** [database/repository.py](./hive_app/database/repository.py)
 
