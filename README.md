@@ -98,7 +98,7 @@ Embora a busca pela base mais próxima não utilize uma **busca binária** diret
 
 #### **Dicionários**
 
-Utilizamos **dicionários** para armazenar as áreas e bases, permitindo buscas rápidas com base no ID, o que torna o código eficiente.
+Utilizamos **dicionários** para simular o banco de dados e a API e também usamos para armazenar as áreas e bases, permitindo buscas rápidas com base no ID, o que torna o código eficiente.
 
 - **Link para o código:** [database/repository.py](./hive_app/database/repository.py)
 
