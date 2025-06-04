@@ -30,7 +30,7 @@ hive_app/
 
 ---
 
-## Requisitos da Aplicação
+## **Requisitos da Aplicação**
 
 ### 1. **Requisição para API de Áreas Danificadas**
 
@@ -50,7 +50,7 @@ Após receber os dados das áreas, elas são armazenadas no "banco de dados" (us
 
 ### 3. **Encontrar a Base Mais Próxima da Área**
 
-A lógica de encontrar a **base mais próxima** de uma área danificada é baseada no cálculo de distâncias entre coordenadas geográficas utilizando a fórmula **Haversine**. A função `encontrar_base_mais_proxima()` calcula a base mais próxima para cada área.
+A lógica de encontrar a **base mais próxima** de uma área danificada é baseada no cálculo de distâncias entre coordenadas geográficas utilizando a fórmula **Haversine**. A função `encontrar_base_mais_proxima()` calcula a base mais próxima para cada área utilizando **busca binária** para otimizar a busca.
 
 - **Link para o código:** [business/area_service.py](./hive_app/business/area_service.py)
 
@@ -72,7 +72,7 @@ Depois de calcular a quantidade de drones necessários, um **alerta** é enviado
 
 ---
 
-## Conceitos Utilizados
+## **Conceitos Utilizados**
 
 ### **Conjunto 1: Estruturas de Dados**
 
@@ -84,7 +84,7 @@ O conceito de **Árvore** foi aplicado ao mapeamento das **áreas** e **bases**,
 
 #### **Notação O Grande**
 
-A complexidade da busca pela **base mais próxima** é **O(N)**, onde **N** é o número de bases. Esse cálculo é realizado para cada área danificada, o que é eficiente, dado o número relativamente pequeno de bases.
+A complexidade da busca pela **base mais próxima** agora é **O(log N)**, graças à **busca binária**. A ordenação das distâncias tem complexidade **O(N log N)** e a busca binária otimiza a busca para **O(log N)**, o que é eficiente quando lidamos com um grande número de bases.
 
 - **Link para o código:** [utils/geo_utils.py](./hive_app/utils/geo_utils.py)
 
@@ -94,11 +94,11 @@ A complexidade da busca pela **base mais próxima** é **O(N)**, onde **N** é o
 
 #### **Busca Binária**
 
-Embora a busca pela base mais próxima não utilize uma **busca binária** diretamente, poderíamos otimizar isso no futuro se tivermos bases ordenadas ou um conjunto maior de dados.
+Estamos utilizando **busca binária** para encontrar a **base mais próxima** de uma área. Isso é possível porque **ordenamos as distâncias das bases** antes de realizar a busca binária, o que reduz a complexidade de **O(N)** para **O(log N)**.
 
 #### **Dicionários**
 
-Utilizamos **dicionários** para armazenar as áreas e bases, permitindo buscas rápidas com base no ID, o que torna o código eficiente.
+Utilizamos **dicionários** para simular o banco de dados e o retorno da API e também usamos para armazenar as áreas e bases, permitindo buscas rápidas com base no ID, o que torna o código eficiente.
 
 - **Link para o código:** [database/repository.py](./hive_app/database/repository.py)
 
@@ -109,5 +109,3 @@ Utilizamos **dicionários** para armazenar as áreas e bases, permitindo buscas 
 Embora o projeto não tenha usado grafos complexos, podemos visualizar as **bases** e **áreas danificadas** como um grafo, onde as bases são **nós** e as **arestas** são as distâncias entre elas. Isso é um conceito que poderia ser melhor explorado se precisássemos otimizar a escolha das bases.
 
 - **Link para o código:** [business/area_service.py](./hive_app/business/area_service.py)
-
----

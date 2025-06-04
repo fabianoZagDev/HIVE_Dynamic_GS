@@ -1,9 +1,0 @@
-{
-    "python.analysis.extraPaths": [
-        "./api_client",
-        "./database",
-        "./business",
-        "./notifications",
-        "./utils"
-    ]
-}
