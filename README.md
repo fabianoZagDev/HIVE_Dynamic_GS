@@ -12,20 +12,35 @@ Este repositório contém a implementação de uma aplicação em Python que int
 
 A estrutura de pastas do projeto é a seguinte:
 hive_app/
+
 ├── api_client/
+
 │ ├── areas_api.py # Requisição para API de áreas danificadas (Simulada)
+
 ├── database/
+
 │ ├── models.py # Definição de modelos (Area, Base)
+
 │ └── repository.py # Funções de acesso ao "banco" (simulado)
+
 ├── business/
+
 │ ├── area_service.py # Lógica de negócio para áreas
+
 │ └── base_service.py # Lógica de negócio para bases
+
 ├── notifications/
+
 │ └── alert_service.py # Envio de alertas sobre áreas danificadas
+
 ├── interface/
+
 │ └── cli.py # Interação com o usuário via linha de comando
+
 ├── utils/
+
 │ └── geo_utils.py # Funções utilitárias para cálculos geográficos
+
 ├── main.py # Ponto de entrada para rodar o 
 
 ---
@@ -98,7 +113,11 @@ Estamos utilizando **busca binária** para encontrar a **base mais próxima** de
 
 #### **Dicionários**
 
+<<<<<<< HEAD
 Utilizamos **dicionários** para simular o banco de dados e o retorno da API e também usamos para armazenar as áreas e bases, permitindo buscas rápidas com base no ID, o que torna o código eficiente.
+=======
+Utilizamos **dicionários** para simular o banco de dados e a API e também usamos para armazenar as áreas e bases, permitindo buscas rápidas com base no ID, o que torna o código eficiente.
+>>>>>>> 5f6fa8efd95e7b30ec192592d9fe964dc545d3a7
 
 - **Link para o código:** [database/repository.py](./hive_app/database/repository.py)
 
@@ -109,3 +128,8 @@ Utilizamos **dicionários** para simular o banco de dados e o retorno da API e t
 Embora o projeto não tenha usado grafos complexos, podemos visualizar as **bases** e **áreas danificadas** como um grafo, onde as bases são **nós** e as **arestas** são as distâncias entre elas. Isso é um conceito que poderia ser melhor explorado se precisássemos otimizar a escolha das bases.
 
 - **Link para o código:** [business/area_service.py](./hive_app/business/area_service.py)
+<<<<<<< HEAD
+=======
+
+---
+>>>>>>> 5f6fa8efd95e7b30ec192592d9fe964dc545d3a7
